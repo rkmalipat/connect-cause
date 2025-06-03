@@ -92,8 +92,13 @@ export class MemStorage implements IStorage {
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.currentId.users++;
     const user: User = { 
-      ...insertUser, 
-      id, 
+      ...insertUser,
+      id,
+      avatar: insertUser.avatar || null,
+      bio: insertUser.bio || null,
+      location: insertUser.location || null,
+      country: insertUser.country || "United States",
+      verified: insertUser.verified || null,
       createdAt: new Date()
     };
     this.users.set(id, user);
@@ -133,10 +138,13 @@ export class MemStorage implements IStorage {
   async createInitiative(insertInitiative: InsertInitiative): Promise<Initiative> {
     const id = this.currentId.initiatives++;
     const initiative: Initiative = { 
-      ...insertInitiative, 
+      ...insertInitiative,
       id,
       raisedAmount: 0,
       supportersCount: 0,
+      country: insertInitiative.country || "United States",
+      coverImage: insertInitiative.coverImage || null,
+      status: insertInitiative.status || "active",
       createdAt: new Date()
     };
     this.initiatives.set(id, initiative);
@@ -184,9 +192,12 @@ export class MemStorage implements IStorage {
   async createStory(insertStory: InsertStory): Promise<Story> {
     const id = this.currentId.stories++;
     const story: Story = { 
-      ...insertStory, 
+      ...insertStory,
       id,
       heartsCount: 0,
+      mediaUrl: insertStory.mediaUrl || null,
+      mediaType: insertStory.mediaType || null,
+      initiativeId: insertStory.initiativeId || null,
       createdAt: new Date()
     };
     this.stories.set(id, story);

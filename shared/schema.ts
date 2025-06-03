@@ -12,6 +12,7 @@ export const users = pgTable("users", {
   avatar: text("avatar"),
   bio: text("bio"),
   location: text("location"),
+  country: text("country").notNull().default("United States"),
   verified: boolean("verified").default(false),
   createdAt: timestamp("created_at").defaultNow(),
 });
@@ -26,6 +27,7 @@ export const initiatives = pgTable("initiatives", {
   supportersCount: integer("supporters_count").default(0),
   coverImage: text("cover_image"),
   runnerId: integer("runner_id").notNull(),
+  country: text("country").notNull().default("United States"),
   status: text("status").default("active"), // 'active', 'completed', 'paused'
   createdAt: timestamp("created_at").defaultNow(),
 });

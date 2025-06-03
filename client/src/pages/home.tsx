@@ -32,10 +32,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                Bridging Hearts, <span className="text-action-orange">Building Futures</span>
+                Building Bridges, <span className="text-action-orange">Creating Connections</span>
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Connect donors with students and initiatives that need support. Share stories, build relationships, and create lasting impact in education and livelihoods.
+                Bridge the gap between generous donors and meaningful educational initiatives. Share stories, build relationships, and create lasting impact across communities worldwide.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 {user ? (
@@ -109,7 +109,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How ConnectCause Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How CauseBridge Works</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">Three communities coming together to create lasting educational and livelihood impact</p>
           </div>
           
