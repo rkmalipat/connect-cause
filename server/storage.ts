@@ -21,6 +21,8 @@ export interface IStorage {
   createInitiative(initiative: InsertInitiative): Promise<Initiative>;
   updateInitiative(id: number, updates: Partial<Initiative>): Promise<Initiative | undefined>;
   getInitiativesByCategory(category: string): Promise<Initiative[]>;
+  getInitiativesByCountry(country: string): Promise<Initiative[]>;
+  getAvailableCountries(): Promise<string[]>;
 
   // Stories
   getStory(id: number): Promise<Story | undefined>;
@@ -166,6 +168,20 @@ export class MemStorage implements IStorage {
     );
   }
 
+  async getInitiativesByCountry(country: string): Promise<Initiative[]> {
+    return Array.from(this.initiatives.values()).filter(initiative => 
+      initiative.country === country
+    );
+  }
+
+  async getAvailableCountries(): Promise<string[]> {
+    const countries = new Set<string>();
+    Array.from(this.initiatives.values()).forEach(initiative => {
+      countries.add(initiative.country);
+    });
+    return Array.from(countries).sort();
+  }
+
   // Stories
   async getStory(id: number): Promise<Story | undefined> {
     return this.stories.get(id);
@@ -285,8 +301,10 @@ export class MemStorage implements IStorage {
   async createDonation(insertDonation: InsertDonation): Promise<Donation> {
     const id = this.currentId.donations++;
     const donation: Donation = { 
-      ...insertDonation, 
+      ...insertDonation,
       id,
+      message: insertDonation.message || null,
+      anonymous: insertDonation.anonymous || null,
       createdAt: new Date()
     };
     this.donations.set(id, donation);

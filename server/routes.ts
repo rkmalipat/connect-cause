@@ -91,13 +91,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Initiative routes
   app.get("/api/initiatives", async (req, res) => {
     try {
-      const { category, runner } = req.query;
+      const { category, runner, country } = req.query;
       let initiatives;
 
       if (category) {
         initiatives = await storage.getInitiativesByCategory(category as string);
       } else if (runner) {
         initiatives = await storage.getInitiativesByRunner(parseInt(runner as string));
+      } else if (country) {
+        initiatives = await storage.getInitiativesByCountry(country as string);
       } else {
         initiatives = await storage.getInitiatives();
       }
@@ -105,6 +107,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(initiatives);
     } catch (error) {
       res.status(400).json({ message: "Failed to get initiatives" });
+    }
+  });
+
+  app.get("/api/countries", async (req, res) => {
+    try {
+      const countries = await storage.getAvailableCountries();
+      res.json(countries);
+    } catch (error) {
+      res.status(400).json({ message: "Failed to get countries" });
     }
   });
 

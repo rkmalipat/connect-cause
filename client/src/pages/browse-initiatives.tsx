@@ -4,17 +4,24 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import InitiativeCard from "@/components/initiative-card";
-import { Search, Filter, Heart, TrendingUp } from "lucide-react";
+import { Search, Filter, Heart, TrendingUp, Globe, MapPin } from "lucide-react";
 import type { Initiative } from "@shared/schema";
 
 export default function BrowseInitiatives() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedCountry, setSelectedCountry] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("recent");
 
   const { data: initiatives = [], isLoading } = useQuery<Initiative[]>({
     queryKey: ["/api/initiatives"],
+  });
+
+  const { data: countries = [] } = useQuery<string[]>({
+    queryKey: ["/api/countries"],
   });
 
   const categories = [
@@ -37,7 +44,8 @@ export default function BrowseInitiatives() {
       const matchesSearch = initiative.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            initiative.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === "all" || initiative.category === selectedCategory;
-      return matchesSearch && matchesCategory;
+      const matchesCountry = selectedCountry === "all" || initiative.country === selectedCountry;
+      return matchesSearch && matchesCategory && matchesCountry;
     })
     .sort((a, b) => {
       switch (sortBy) {
