@@ -89,6 +89,35 @@ export default function BrowseInitiatives() {
           </p>
         </div>
 
+        {/* Country Tabs */}
+        <Tabs value={selectedCountry} onValueChange={setSelectedCountry} className="mb-8">
+          <TabsList className="flex flex-wrap justify-center gap-2 bg-white p-2 rounded-lg border">
+            <TabsTrigger value="all" className="flex items-center gap-2 data-[state=active]:bg-trust-blue data-[state=active]:text-white">
+              <Globe className="h-4 w-4" />
+              All Countries
+              <Badge variant="secondary" className="ml-1">
+                {initiatives.length}
+              </Badge>
+            </TabsTrigger>
+            {countries.map((country) => {
+              const countryInitiatives = initiatives.filter(init => init.country === country);
+              return (
+                <TabsTrigger 
+                  key={country} 
+                  value={country} 
+                  className="flex items-center gap-2 data-[state=active]:bg-trust-blue data-[state=active]:text-white"
+                >
+                  <MapPin className="h-4 w-4" />
+                  {country}
+                  <Badge variant="secondary" className="ml-1">
+                    {countryInitiatives.length}
+                  </Badge>
+                </TabsTrigger>
+              );
+            })}
+          </TabsList>
+        </Tabs>
+
         {/* Stats Cards */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
           <Card>
