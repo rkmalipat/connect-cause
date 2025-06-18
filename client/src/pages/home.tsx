@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import InitiativeCard from "@/components/initiative-card";
 import StoryReel from "@/components/story-reel";
+import ImpactDashboard from "@/components/impact-dashboard";
+import NewsletterSignup from "@/components/newsletter-signup";
+import ReferralWidget from "@/components/referral-widget";
 import { useAuth } from "@/hooks/use-auth";
 import { Heart, Users, GraduationCap, HandHeart, Plus } from "lucide-react";
 import type { Initiative, Story } from "@shared/schema";
@@ -22,6 +25,22 @@ export default function Home() {
   // Take only first 3 initiatives and 4 stories for featured sections
   const displayInitiatives = featuredInitiatives.slice(0, 3);
   const displayStories = featuredStories.slice(0, 4);
+
+  // Calculate impact stats
+  const impactStats = {
+    totalDonations: featuredInitiatives.reduce((sum, init) => sum + (init.raisedAmount || 0), 0),
+    studentsHelped: featuredInitiatives.reduce((sum, init) => sum + (init.supportersCount || 0), 0),
+    initiativesActive: featuredInitiatives.filter(init => init.status === 'active').length,
+    countriesReached: new Set(featuredInitiatives.map(init => init.country)).size,
+    completionRate: 85
+  };
+
+  // Calculate user impact if logged in
+  const userImpact = user ? {
+    totalDonated: 2500,
+    studentsSupported: 12,
+    initiativesSupported: 5
+  } : undefined;
 
   return (
     <div className="min-h-screen">
@@ -295,6 +314,31 @@ export default function Home() {
 
           <div className="flex items-center justify-center text-sm text-gray-500">
             <span>Secure • Verified • Transparent</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Dashboard */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Collective Impact</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">See the real difference we're making together</p>
+          </div>
+          <ImpactDashboard 
+            stats={impactStats} 
+            showPersonalized={!!user} 
+            userImpact={userImpact}
+          />
+        </div>
+      </section>
+
+      {/* Newsletter & Referral Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8">
+            <NewsletterSignup />
+            {user && <ReferralWidget />}
           </div>
         </div>
       </section>
