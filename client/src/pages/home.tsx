@@ -12,6 +12,7 @@ import PersonalizedHero from "@/components/personalized-hero";
 import QuickStart from "@/components/quick-start";
 import InstantEngagement from "@/components/instant-engagement";
 import OneMinuteEngagement from "@/components/one-minute-engagement";
+import EducationFocusBanner from "@/components/education-focus-banner";
 import { useAuth } from "@/hooks/use-auth";
 import { Heart, Users, GraduationCap, HandHeart, Plus } from "lucide-react";
 import type { Initiative, Story } from "@shared/schema";
@@ -61,15 +62,22 @@ export default function Home() {
         </section>
       )}
 
+      {/* Education Focus Banner */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <EducationFocusBanner />
+        </div>
+      </section>
+
       {/* Instant Engagement Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Lives Waiting for Your Help
+              Students Ready to Connect
             </h2>
             <p className="text-lg text-gray-600">
-              Real students, real needs, real impact in 30 seconds
+              Real students, real friendships, real education support
             </p>
           </div>
           <InstantEngagement />
@@ -135,7 +143,7 @@ export default function Home() {
                   <GraduationCap className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Lives Change</h3>
-                <p className="text-gray-600 mb-6">Students learn. Dreams become reality. Success stories inspire more giving.</p>
+                <p className="text-gray-600 mb-6">Students share their journey. Friendships blossom. Education transforms communities.</p>
                 <div className="bg-gray-50 rounded-lg p-4">
                   <div className="flex items-center mb-2">
                     <div className="flex -space-x-2 mr-3">

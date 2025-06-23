@@ -128,8 +128,8 @@ export class MemStorage implements IStorage {
     // Sample initiatives focused on India and USA
     this.initiatives.set(1, {
       id: 1,
-      title: "Digital Literacy for Rural India",
-      description: "Bringing computer skills and internet access to remote villages in Rajasthan through mobile learning labs",
+      title: "Digital Education - Rural Rajasthan",
+      description: "Help village students learn computer skills for better job opportunities. Chat with students as they progress from basics to advanced skills.",
       category: "education",
       country: "India",
       goalAmount: 25000,
@@ -143,8 +143,8 @@ export class MemStorage implements IStorage {
 
     this.initiatives.set(2, {
       id: 2,
-      title: "Coding Bootcamp - Detroit Youth",
-      description: "Free coding bootcamp and job placement program for underserved youth in Detroit",
+      title: "Coding Skills - Detroit Youth",
+      description: "Support young people learning to code for tech careers. Get regular updates and celebrate their first job offers together.",
       category: "skill_development",
       country: "USA",
       goalAmount: 35000,
@@ -158,8 +158,8 @@ export class MemStorage implements IStorage {
 
     this.initiatives.set(3, {
       id: 3,
-      title: "Women's Education Support - Tamil Nadu",
-      description: "Supporting young women in Tamil Nadu to complete their higher education through scholarships and mentorship",
+      title: "Women's Higher Education - Tamil Nadu", 
+      description: "Help young women pursue college degrees and break barriers. Exchange messages with them as they achieve their educational dreams.",
       category: "education",
       country: "India",
       goalAmount: 15000,
@@ -173,8 +173,8 @@ export class MemStorage implements IStorage {
 
     this.initiatives.set(4, {
       id: 4,
-      title: "STEM Girls - California",
-      description: "Encouraging girls from underrepresented communities to pursue STEM careers through hands-on workshops",
+      title: "STEM Education for Girls - California",
+      description: "Inspire girls to explore science and engineering through fun workshops. Connect with them as they discover their passion for STEM.",
       category: "education",
       country: "USA",
       goalAmount: 20000,
@@ -188,8 +188,8 @@ export class MemStorage implements IStorage {
 
     this.initiatives.set(5, {
       id: 5,
-      title: "Vocational Training Center - Maharashtra",
-      description: "Establishing vocational training programs for rural youth in Maharashtra focusing on sustainable agriculture",
+      title: "Job Skills Training - Rural Maharashtra",
+      description: "Help rural youth learn practical skills for sustainable livelihoods. Follow their journey from training to starting their own ventures.",
       category: "skill_development",
       country: "India",
       goalAmount: 18000,
@@ -204,7 +204,7 @@ export class MemStorage implements IStorage {
     // Sample stories
     this.stories.set(1, {
       id: 1,
-      content: "Thanks to the Digital Literacy program, I can now help my children with their online schoolwork and even started a small online business selling handicrafts!",
+      content: "My donor friend Sarah helped me learn computers! Now I help my children with schoolwork and started selling handicrafts online. We chat every week!",
       mediaUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80",
       mediaType: "image",
       authorId: 1,
@@ -215,7 +215,7 @@ export class MemStorage implements IStorage {
 
     this.stories.set(2, {
       id: 2,
-      content: "The coding bootcamp changed my life! I went from unemployment to landing a software developer job at a local startup. Now I'm helping others in my community learn to code too.",
+      content: "My supporter Michael believed in me when no one else did. After learning to code, I got my first tech job! We still chat and he celebrates every milestone with me.",
       mediaUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
       mediaType: "image",
       authorId: 2,
@@ -226,7 +226,7 @@ export class MemStorage implements IStorage {
 
     this.stories.set(3, {
       id: 3,
-      content: "With the scholarship support, I'm now pursuing my engineering degree. I want to become an engineer and build better infrastructure for my village.",
+      content: "Thanks to my donor friend Lisa, I'm studying engineering! We video call monthly and she gives me career advice. I can't wait to build better roads for my village.",
       mediaUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
       mediaType: "image",
       authorId: 1,

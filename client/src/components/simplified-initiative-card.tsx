@@ -22,9 +22,9 @@ export default function SimplifiedInitiativeCard({ initiative }: SimplifiedIniti
 
   const getQuickImpact = () => {
     if (initiative.category === "education") {
-      return "Complete education program";
+      return "Personal mentorship + education support";
     }
-    return "Job-ready skills training";
+    return "Skills training + career guidance friendship";
   };
 
   return (
@@ -89,10 +89,13 @@ export default function SimplifiedInitiativeCard({ initiative }: SimplifiedIniti
           </div>
         </div>
 
-        {/* Impact Statement */}
+        {/* Connection Promise */}
         <div className="bg-gradient-to-r from-trust-blue/5 to-action-orange/5 p-3 rounded-lg mb-4">
           <p className="text-sm font-medium text-trust-blue">
-            Your support helps: {getQuickImpact()}
+            You'll get: {getQuickImpact()}
+          </p>
+          <p className="text-xs text-gray-600 mt-1">
+            Direct messaging • Progress photos • Thank you videos
           </p>
         </div>
 
@@ -100,10 +103,10 @@ export default function SimplifiedInitiativeCard({ initiative }: SimplifiedIniti
         <div className="space-y-2">
           <Button className="w-full bg-action-orange hover:bg-orange-600 font-semibold">
             <Heart className="mr-2 h-4 w-4" />
-            Support Now
+            Meet & Support
           </Button>
           <Button variant="outline" className="w-full text-trust-blue border-trust-blue hover:bg-trust-blue hover:text-white">
-            Learn More
+            Chat First
           </Button>
         </div>
       </CardContent>

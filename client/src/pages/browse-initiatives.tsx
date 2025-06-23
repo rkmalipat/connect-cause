@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import SimplifiedInitiativeCard from "@/components/simplified-initiative-card";
+import EducationFocusBanner from "@/components/education-focus-banner";
 import { Search, Filter, Heart, TrendingUp, Globe, MapPin } from "lucide-react";
 import type { Initiative } from "@shared/schema";
 
@@ -85,9 +86,12 @@ export default function BrowseInitiatives() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Find Your Student</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Choose a student to support. See their progress. Change their life.
+            Meet students who need education support. Chat with them. Follow their journey to success.
           </p>
         </div>
+
+        {/* Education Focus Banner */}
+        <EducationFocusBanner />
 
         {/* Country Tabs */}
         <Tabs value={selectedCountry} onValueChange={setSelectedCountry} className="mb-8">

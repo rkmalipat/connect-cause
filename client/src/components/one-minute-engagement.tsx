@@ -38,10 +38,10 @@ export default function OneMinuteEngagement() {
               
               <div>
                 <p className="font-semibold text-gray-900 text-sm">
-                  "Your $25 bought my first laptop!"
+                  "Thank you for believing in me!"
                 </p>
                 <p className="text-xs text-gray-600">
-                  Priya just got accepted to engineering college
+                  Priya wants to video chat about her college acceptance
                 </p>
               </div>
               
@@ -49,7 +49,7 @@ export default function OneMinuteEngagement() {
                 <Button asChild size="sm" className="flex-1 bg-action-orange hover:bg-orange-600">
                   <Link href="/browse">
                     <Heart className="h-3 w-3 mr-1" />
-                    Help Next Student
+                    Meet a Student
                   </Link>
                 </Button>
                 <Button 
@@ -64,7 +64,7 @@ export default function OneMinuteEngagement() {
               
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <Users className="h-3 w-3" />
-                <span>47 people helped students today</span>
+                <span>47 people made new student friends today</span>
               </div>
             </div>
           ) : (

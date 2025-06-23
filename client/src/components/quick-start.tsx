@@ -11,10 +11,10 @@ export default function QuickStart() {
   const quickAmounts = [10, 25, 50, 100];
   
   const quickImpacts = [
-    { amount: 10, impact: "School supplies for 1 student" },
-    { amount: 25, impact: "1 month of meals for a student" },
-    { amount: 50, impact: "Textbooks for entire semester" },
-    { amount: 100, impact: "Computer access for 3 months" }
+    { amount: 10, impact: "School supplies + monthly chat with student" },
+    { amount: 25, impact: "Vocational training + progress updates" },
+    { amount: 50, impact: "Semester textbooks + video calls" },
+    { amount: 100, impact: "Computer skills course + friendship" }
   ];
 
   const currentImpact = quickImpacts.find(q => q.amount === selectedAmount)?.impact;
@@ -27,7 +27,7 @@ export default function QuickStart() {
             <Zap className="h-6 w-6 text-action-orange" />
             <h3 className="text-2xl font-bold text-gray-900">Start Helping Now</h3>
           </div>
-          <p className="text-gray-600">Pick an amount. See immediate impact. Connect with a student.</p>
+          <p className="text-gray-600">Pick an amount. Meet your student. Build a friendship that changes lives.</p>
         </div>
 
         <div className="space-y-6">

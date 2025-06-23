@@ -13,8 +13,8 @@ export default function MarketingFeatures() {
     },
     {
       icon: Users,
-      title: "Direct Connection",
-      description: "Message initiative runners and beneficiaries directly, building authentic relationships beyond donations",
+      title: "Personal Friendships",
+      description: "Chat directly with students, share their milestones, celebrate achievements together as friends",
       color: "bg-action-orange/10 text-action-orange"
     },
     {
@@ -36,15 +36,15 @@ export default function MarketingFeatures() {
       name: "India",
       flag: "🇮🇳",
       initiatives: 3,
-      focus: "Rural education, digital literacy, women's empowerment",
-      highlight: "Reaching remote villages with mobile learning labs"
+      focus: "Rural education, vocational skills, women's literacy programs",
+      highlight: "Meet students in remote villages pursuing their dreams"
     },
     {
       name: "USA",
       flag: "🇺🇸", 
       initiatives: 2,
-      focus: "STEM education, coding bootcamps, underserved communities",
-      highlight: "Bridging the digital divide in urban areas"
+      focus: "STEM education, job skills training, underserved youth",
+      highlight: "Connect with students overcoming challenges in cities"
     }
   ];
 

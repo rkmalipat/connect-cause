@@ -24,17 +24,17 @@ export default function PersonalizedHero() {
   const getPersonalizedMessage = () => {
     if (!user) {
       return {
-        title: "Ready to change a life today?",
-        subtitle: "Join thousands making education possible worldwide",
-        cta: "Start Your Impact Journey"
+        title: "Ready to meet a student who needs you?",
+        subtitle: "Build real friendships while supporting education in India and USA",
+        cta: "Meet Students Now"
       };
     }
 
     if (user.userType === 'donor') {
       return {
         title: `${getGreeting()}, ${user.fullName.split(' ')[0]}!`,
-        subtitle: "3 students are waiting for your support today",
-        cta: "See Who Needs Help"
+        subtitle: "3 students want to meet you and share their dreams",
+        cta: "Meet Your Students"
       };
     }
 

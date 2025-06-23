@@ -18,7 +18,7 @@ export default function InstantEngagement() {
       timeLeft: "3 days",
       supporters: 23,
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=200&fit=crop",
-      impact: "Will enable her to teach 50+ village children",
+      impact: "Chat with Priya as she builds a coding school",
       urgency: "Almost funded!"
     },
     {
@@ -29,7 +29,7 @@ export default function InstantEngagement() {
       timeLeft: "5 days",
       supporters: 34,
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop",
-      impact: "10 students will get job-ready skills",
+      impact: "Connect with Marcus and his coding students",
       urgency: "67% complete"
     },
     {
@@ -40,7 +40,7 @@ export default function InstantEngagement() {
       timeLeft: "2 days",
       supporters: 18,
       image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=300&h=200&fit=crop",
-      impact: "20 girls will discover engineering",
+      impact: "Meet the girls discovering their STEM passion",
       urgency: "So close!"
     }
   ];
