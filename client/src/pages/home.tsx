@@ -2,12 +2,16 @@ import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import InitiativeCard from "@/components/initiative-card";
+import SimplifiedInitiativeCard from "@/components/simplified-initiative-card";
 import StoryReel from "@/components/story-reel";
 import ImpactDashboard from "@/components/impact-dashboard";
 import NewsletterSignup from "@/components/newsletter-signup";
 import ReferralWidget from "@/components/referral-widget";
 import MarketingFeatures from "@/components/marketing-features";
+import PersonalizedHero from "@/components/personalized-hero";
+import QuickStart from "@/components/quick-start";
+import InstantEngagement from "@/components/instant-engagement";
+import OneMinuteEngagement from "@/components/one-minute-engagement";
 import { useAuth } from "@/hooks/use-auth";
 import { Heart, Users, GraduationCap, HandHeart, Plus } from "lucide-react";
 import type { Initiative, Story } from "@shared/schema";
@@ -45,83 +49,30 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-trust-blue to-accent-purple text-white">
-        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                Building Bridges, <span className="text-action-orange">Creating Connections</span>
-              </h1>
-              <p className="text-xl mb-8 text-blue-100">
-                Bridge the gap between generous donors and meaningful educational initiatives in India and USA. Share stories, build relationships, and create lasting impact across these diverse communities.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                {user ? (
-                  <>
-                    {user.userType === 'donor' && (
-                      <Button asChild className="bg-action-orange text-white hover:bg-amber-600">
-                        <Link href="/browse">
-                          <HandHeart className="mr-2 h-5 w-5" />
-                          Browse Causes
-                        </Link>
-                      </Button>
-                    )}
-                    {user.userType === 'initiative_runner' && (
-                      <Button asChild className="bg-action-orange text-white hover:bg-amber-600">
-                        <Link href="/profile/create-initiative">
-                          <Plus className="mr-2 h-5 w-5" />
-                          Create Initiative
-                        </Link>
-                      </Button>
-                    )}
-                    {user.userType === 'beneficiary' && (
-                      <Button asChild className="bg-action-orange text-white hover:bg-amber-600">
-                        <Link href="/stories">
-                          <Heart className="mr-2 h-5 w-5" />
-                          Share Your Story
-                        </Link>
-                      </Button>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <Button asChild className="bg-action-orange text-white hover:bg-amber-600">
-                      <Link href="/auth?mode=register&type=donor">
-                        <HandHeart className="mr-2 h-5 w-5" />
-                        Start Donating
-                      </Link>
-                    </Button>
-                    <Button asChild className="bg-white text-trust-blue hover:bg-gray-100">
-                      <Link href="/auth?mode=register&type=initiative_runner">
-                        <Plus className="mr-2 h-5 w-5" />
-                        Create Initiative
-                      </Link>
-                    </Button>
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Students collaborating on education projects" 
-                className="rounded-2xl shadow-2xl w-full" 
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center">
-                  <div className="bg-hope-green text-white p-2 rounded-full mr-3">
-                    <GraduationCap className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">2,847 Students</p>
-                    <p className="text-sm text-gray-600">Supported This Month</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* Personalized Hero Section */}
+      <PersonalizedHero />
+
+      {/* Quick Start Section */}
+      {!user && (
+        <section className="py-12 bg-gradient-to-r from-gray-50 to-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <QuickStart />
           </div>
+        </section>
+      )}
+
+      {/* Instant Engagement Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Lives Waiting for Your Help
+            </h2>
+            <p className="text-lg text-gray-600">
+              Real students, real needs, real impact in 30 seconds
+            </p>
+          </div>
+          <InstantEngagement />
         </div>
       </section>
 
@@ -130,7 +81,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How ConnectCause Works</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Connecting donors with educational initiatives in India and USA to create lasting impact</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Simple steps to change lives</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -183,8 +134,8 @@ export default function Home() {
                 <div className="bg-action-orange text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <GraduationCap className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Students & Beneficiaries</h3>
-                <p className="text-gray-600 mb-6">Share your educational journey, communicate with supporters, showcase your progress, and express gratitude to those who believe in your potential.</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Lives Change</h3>
+                <p className="text-gray-600 mb-6">Students learn. Dreams become reality. Success stories inspire more giving.</p>
                 <div className="bg-gray-50 rounded-lg p-4">
                   <div className="flex items-center mb-2">
                     <div className="flex -space-x-2 mr-3">
@@ -207,8 +158,8 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center mb-12">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Initiatives</h2>
-                <p className="text-xl text-gray-600">Discover impactful projects that need your support</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Students Need You Now</h2>
+                <p className="text-xl text-gray-600">Real students, real dreams, real impact</p>
               </div>
               <Button asChild variant="ghost" className="text-trust-blue hover:text-blue-700">
                 <Link href="/browse">
@@ -219,7 +170,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {displayInitiatives.map((initiative) => (
-                <InitiativeCard key={initiative.id} initiative={initiative} />
+                <SimplifiedInitiativeCard key={initiative.id} initiative={initiative} />
               ))}
             </div>
           </div>
@@ -231,8 +182,8 @@ export default function Home() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
-              <p className="text-xl text-gray-600">Real impact, real connections, real change</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Your Impact in Action</h2>
+              <p className="text-xl text-gray-600">See how support changes everything</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -350,6 +301,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* One Minute Engagement Widget */}
+      <OneMinuteEngagement />
     </div>
   );
 }

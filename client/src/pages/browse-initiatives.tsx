@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import InitiativeCard from "@/components/initiative-card";
+import SimplifiedInitiativeCard from "@/components/simplified-initiative-card";
 import { Search, Filter, Heart, TrendingUp, Globe, MapPin } from "lucide-react";
 import type { Initiative } from "@shared/schema";
 
@@ -83,9 +83,9 @@ export default function BrowseInitiatives() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Browse Initiatives</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Find Your Student</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover meaningful projects creating lasting impact in education and livelihoods across India and USA
+            Choose a student to support. See their progress. Change their life.
           </p>
         </div>
 
