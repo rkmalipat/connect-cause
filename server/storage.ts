@@ -69,13 +69,171 @@ export class MemStorage implements IStorage {
     this.donations = new Map();
     this.supports = new Map();
     this.currentId = {
-      users: 1,
-      initiatives: 1,
-      stories: 1,
+      users: 4,
+      initiatives: 6,
+      stories: 4,
       messages: 1,
       donations: 1,
       supports: 1,
     };
+
+    // Initialize with sample data focused on India and USA
+    this.initializeSampleData();
+  }
+
+  private initializeSampleData() {
+    // Sample users
+    this.users.set(1, {
+      id: 1,
+      email: "priya.sharma@example.com",
+      username: "priyaeducator",
+      fullName: "Priya Sharma",
+      userType: "runner",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b34e2d0b?w=150&h=150&fit=crop&crop=face",
+      bio: "Educational advocate working in rural India for 15+ years",
+      location: "Rajasthan, India",
+      country: "India",
+      verified: true,
+      createdAt: new Date('2023-12-01')
+    });
+
+    this.users.set(2, {
+      id: 2,
+      email: "marcus.johnson@example.com",
+      username: "marcustech",
+      fullName: "Marcus Johnson",
+      userType: "runner",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      bio: "Tech educator focusing on underserved communities",
+      location: "Detroit, Michigan",
+      country: "USA",
+      verified: true,
+      createdAt: new Date('2023-11-15')
+    });
+
+    this.users.set(3, {
+      id: 3,
+      email: "sarah.davis@example.com",
+      username: "sarahdavis",
+      fullName: "Sarah Davis",
+      userType: "donor",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      bio: "Software executive passionate about global education",
+      location: "San Francisco, California",
+      country: "USA",
+      verified: null,
+      createdAt: new Date('2024-01-10')
+    });
+
+    // Sample initiatives focused on India and USA
+    this.initiatives.set(1, {
+      id: 1,
+      title: "Digital Literacy for Rural India",
+      description: "Bringing computer skills and internet access to remote villages in Rajasthan through mobile learning labs",
+      category: "education",
+      country: "India",
+      goalAmount: 25000,
+      raisedAmount: 18500,
+      supportersCount: 234,
+      coverImage: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&q=80",
+      runnerId: 1,
+      status: "active",
+      createdAt: new Date('2024-01-15')
+    });
+
+    this.initiatives.set(2, {
+      id: 2,
+      title: "Coding Bootcamp - Detroit Youth",
+      description: "Free coding bootcamp and job placement program for underserved youth in Detroit",
+      category: "skill_development",
+      country: "USA",
+      goalAmount: 35000,
+      raisedAmount: 28300,
+      supportersCount: 156,
+      coverImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+      runnerId: 2,
+      status: "active",
+      createdAt: new Date('2024-02-01')
+    });
+
+    this.initiatives.set(3, {
+      id: 3,
+      title: "Women's Education Support - Tamil Nadu",
+      description: "Supporting young women in Tamil Nadu to complete their higher education through scholarships and mentorship",
+      category: "education",
+      country: "India",
+      goalAmount: 15000,
+      raisedAmount: 12750,
+      supportersCount: 98,
+      coverImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
+      runnerId: 1,
+      status: "active",
+      createdAt: new Date('2024-01-20')
+    });
+
+    this.initiatives.set(4, {
+      id: 4,
+      title: "STEM Girls - California",
+      description: "Encouraging girls from underrepresented communities to pursue STEM careers through hands-on workshops",
+      category: "education",
+      country: "USA",
+      goalAmount: 20000,
+      raisedAmount: 8500,
+      supportersCount: 67,
+      coverImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+      runnerId: 2,
+      status: "active",
+      createdAt: new Date('2024-02-10')
+    });
+
+    this.initiatives.set(5, {
+      id: 5,
+      title: "Vocational Training Center - Maharashtra",
+      description: "Establishing vocational training programs for rural youth in Maharashtra focusing on sustainable agriculture",
+      category: "skill_development",
+      country: "India",
+      goalAmount: 18000,
+      raisedAmount: 14200,
+      supportersCount: 189,
+      coverImage: "https://images.unsplash.com/photo-1560785477-d43d2b34e0df?w=800&q=80",
+      runnerId: 1,
+      status: "active",
+      createdAt: new Date('2024-01-25')
+    });
+
+    // Sample stories
+    this.stories.set(1, {
+      id: 1,
+      content: "Thanks to the Digital Literacy program, I can now help my children with their online schoolwork and even started a small online business selling handicrafts!",
+      mediaUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80",
+      mediaType: "image",
+      authorId: 1,
+      initiativeId: 1,
+      heartsCount: 47,
+      createdAt: new Date('2024-02-15')
+    });
+
+    this.stories.set(2, {
+      id: 2,
+      content: "The coding bootcamp changed my life! I went from unemployment to landing a software developer job at a local startup. Now I'm helping others in my community learn to code too.",
+      mediaUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
+      mediaType: "image",
+      authorId: 2,
+      initiativeId: 2,
+      heartsCount: 89,
+      createdAt: new Date('2024-02-20')
+    });
+
+    this.stories.set(3, {
+      id: 3,
+      content: "With the scholarship support, I'm now pursuing my engineering degree. I want to become an engineer and build better infrastructure for my village.",
+      mediaUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+      mediaType: "image",
+      authorId: 1,
+      initiativeId: 3,
+      heartsCount: 56,
+      createdAt: new Date('2024-02-25')
+    });
   }
 
   // Users
@@ -99,7 +257,7 @@ export class MemStorage implements IStorage {
       avatar: insertUser.avatar || null,
       bio: insertUser.bio || null,
       location: insertUser.location || null,
-      country: insertUser.country || "United States",
+      country: insertUser.country || "USA",
       verified: insertUser.verified || null,
       createdAt: new Date()
     };
@@ -144,7 +302,7 @@ export class MemStorage implements IStorage {
       id,
       raisedAmount: 0,
       supportersCount: 0,
-      country: insertInitiative.country || "United States",
+      country: insertInitiative.country || "USA",
       coverImage: insertInitiative.coverImage || null,
       status: insertInitiative.status || "active",
       createdAt: new Date()
@@ -175,11 +333,8 @@ export class MemStorage implements IStorage {
   }
 
   async getAvailableCountries(): Promise<string[]> {
-    const countries = new Set<string>();
-    Array.from(this.initiatives.values()).forEach(initiative => {
-      countries.add(initiative.country);
-    });
-    return Array.from(countries).sort();
+    // Hardcode to just India and USA for simplicity, with option to expand
+    return ["India", "USA"];
   }
 
   // Stories

@@ -85,7 +85,7 @@ export default function BrowseInitiatives() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Browse Initiatives</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover meaningful projects that are creating lasting impact in education and livelihoods
+            Discover meaningful projects creating lasting impact in education and livelihoods across India and USA
           </p>
         </div>
 

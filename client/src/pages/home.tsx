@@ -7,6 +7,7 @@ import StoryReel from "@/components/story-reel";
 import ImpactDashboard from "@/components/impact-dashboard";
 import NewsletterSignup from "@/components/newsletter-signup";
 import ReferralWidget from "@/components/referral-widget";
+import MarketingFeatures from "@/components/marketing-features";
 import { useAuth } from "@/hooks/use-auth";
 import { Heart, Users, GraduationCap, HandHeart, Plus } from "lucide-react";
 import type { Initiative, Story } from "@shared/schema";
@@ -54,7 +55,7 @@ export default function Home() {
                 Building Bridges, <span className="text-action-orange">Creating Connections</span>
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Bridge the gap between generous donors and meaningful educational initiatives. Share stories, build relationships, and create lasting impact across communities worldwide.
+                Bridge the gap between generous donors and meaningful educational initiatives in India and USA. Share stories, build relationships, and create lasting impact across these diverse communities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 {user ? (
@@ -129,7 +130,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How ConnectCause Works</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Three communities coming together to create lasting educational and livelihood impact</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Connecting donors with educational initiatives in India and USA to create lasting impact</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -315,6 +316,13 @@ export default function Home() {
           <div className="flex items-center justify-center text-sm text-gray-500">
             <span>Secure • Verified • Transparent</span>
           </div>
+        </div>
+      </section>
+
+      {/* Marketing Features */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MarketingFeatures />
         </div>
       </section>
 
