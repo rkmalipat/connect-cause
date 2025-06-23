@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import OptimizedImage from "@/components/optimized-image";
 import { Heart, Users, Clock, Star, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
@@ -75,10 +76,12 @@ export default function InstantEngagement() {
         <div className="grid md:grid-cols-2 gap-6 items-center">
           {/* Image */}
           <div className="relative">
-            <img 
-              src={currentCard.image} 
+            <OptimizedImage
+              src={currentCard.image}
               alt={currentCard.title}
               className="w-full h-48 object-cover rounded-lg"
+              width={400}
+              height={192}
             />
             <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-medium text-trust-blue">
               {currentCard.location}

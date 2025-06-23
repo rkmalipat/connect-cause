@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import OptimizedImage from "@/components/optimized-image";
 import { Heart, Users, MapPin, Clock, Star } from "lucide-react";
 import type { Initiative } from "@shared/schema";
 
@@ -32,10 +33,12 @@ export default function SimplifiedInitiativeCard({ initiative }: SimplifiedIniti
       {/* Image with overlay */}
       <div className="relative">
         {initiative.coverImage && (
-          <img 
-            src={initiative.coverImage} 
+          <OptimizedImage
+            src={initiative.coverImage}
             alt={initiative.title}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            width={400}
+            height={192}
           />
         )}
         <div className="absolute top-3 left-3 flex gap-2">

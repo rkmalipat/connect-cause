@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import SimplifiedInitiativeCard from "@/components/simplified-initiative-card";
 import EducationFocusBanner from "@/components/education-focus-banner";
+import LoadingSpinner from "@/components/loading-spinner";
 import { Search, Filter, Heart, TrendingUp, Globe, MapPin } from "lucide-react";
 import type { Initiative } from "@shared/schema";
 

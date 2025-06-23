@@ -3,11 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    
+    <!-- SEO Meta Tags -->
+    <title>ConnectCause - Connect with Students, Support Education, Build Friendships</title>
+    <meta name="description" content="Meet students in India and USA who need education support. Chat directly with them, follow their progress, and build lasting friendships while supporting their educational dreams." />
+    <meta name="keywords" content="education support, student mentorship, international education, nonprofit, charity, India education, USA education, student friendships" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ConnectCause - Connect with Students Worldwide" />
+    <meta property="og:description" content="Meet students personally. Support their education. Build friendships across borders in India and USA." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=630&fit=crop" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ConnectCause - Support Student Education" />
+    <meta name="twitter:description" content="Connect with students in India and USA. Support education. Build friendships." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=630&fit=crop" />
+    
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EF4444'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#3B82F6" />
+    
+    <!-- Performance -->
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+    <!-- Development banner only in dev mode -->
+    <script type="text/javascript">
+      if (window.location.hostname === 'localhost' || window.location.hostname.includes('replit.dev')) {
+        const script = document.createElement('script');
+        script.src = 'https://replit.com/public/js/replit-dev-banner.js';
+        document.head.appendChild(script);
+      }
+    </script>
   </body>
 </html>
