@@ -167,9 +167,11 @@ export default function Livelihood() {
                     </div>
                   </div>
                   
-                  <Button className="w-full bg-success-green hover:bg-green-600">
-                    Support This Program
-                    <ArrowRight className="h-4 w-4 ml-2" />
+                  <Button asChild className="w-full bg-success-green hover:bg-green-600">
+                    <Link href="/submit">
+                      Support This Program
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>

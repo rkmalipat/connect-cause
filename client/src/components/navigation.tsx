@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Heart, Menu, User, MessageCircle, Search, Plus, Info } from "lucide-react";
+import { Heart, Menu, User, MessageCircle, Search, Plus, Info, PlusCircle } from "lucide-react";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -18,6 +18,7 @@ export default function Navigation() {
   const navItems = [
     { href: "/browse", label: "Browse Causes", icon: Search },
     { href: "/livelihood", label: "Livelihood", icon: Plus },
+    { href: "/submit", label: "Submit Cause", icon: PlusCircle },
     { href: "/stories", label: "Success Stories", icon: Heart },
     { href: "/about", label: "About Us", icon: Info },
   ];

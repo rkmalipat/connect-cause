@@ -13,6 +13,7 @@ import Messages from "@/pages/messages";
 import Stories from "@/pages/stories";
 import About from "@/pages/about";
 import Livelihood from "@/pages/livelihood";
+import SubmitCause from "@/pages/submit-cause";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -28,6 +29,7 @@ function Router() {
         <Route path="/stories" component={Stories} />
         <Route path="/about" component={About} />
         <Route path="/livelihood" component={Livelihood} />
+        <Route path="/submit" component={SubmitCause} />
         <Route component={NotFound} />
       </Switch>
     </div>

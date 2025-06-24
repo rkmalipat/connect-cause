@@ -9,7 +9,8 @@ import { Badge } from "@/components/ui/badge";
 import SimplifiedInitiativeCard from "@/components/simplified-initiative-card";
 import EducationFocusBanner from "@/components/education-focus-banner";
 import LoadingSpinner from "@/components/loading-spinner";
-import { Search, Filter, Heart, TrendingUp, Globe, MapPin } from "lucide-react";
+import { Search, Filter, Heart, TrendingUp, Globe, MapPin, PlusCircle } from "lucide-react";
+import { Link } from "wouter";
 import type { Initiative } from "@shared/schema";
 
 export default function BrowseInitiatives() {
@@ -244,7 +245,7 @@ export default function BrowseInitiatives() {
         ) : filteredAndSortedInitiatives.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredAndSortedInitiatives.map((initiative) => (
-              <InitiativeCard key={initiative.id} initiative={initiative} />
+              <SimplifiedInitiativeCard key={initiative.id} initiative={initiative} />
             ))}
           </div>
         ) : (
