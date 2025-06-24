@@ -11,6 +11,8 @@ import BrowseInitiatives from "@/pages/browse-initiatives";
 import Profile from "@/pages/profile";
 import Messages from "@/pages/messages";
 import Stories from "@/pages/stories";
+import About from "@/pages/about";
+import Livelihood from "@/pages/livelihood";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +26,8 @@ function Router() {
         <Route path="/profile/:id?" component={Profile} />
         <Route path="/messages" component={Messages} />
         <Route path="/stories" component={Stories} />
+        <Route path="/about" component={About} />
+        <Route path="/livelihood" component={Livelihood} />
         <Route component={NotFound} />
       </Switch>
     </div>
