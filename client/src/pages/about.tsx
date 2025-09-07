@@ -21,7 +21,7 @@ import { Link } from "wouter";
 
 export default function About() {
   const stats = [
-    { label: "Students Helped", value: "2,847", icon: Users },
+    { label: "Students Helped", value: "3,000", icon: Users },
     { label: "Active Donors", value: "1,423", icon: Heart },
     { label: "Countries", value: "2", icon: Globe },
     { label: "Success Rate", value: "94%", icon: Award }
